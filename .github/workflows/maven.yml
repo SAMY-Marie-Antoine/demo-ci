@@ -22,6 +22,7 @@ jobs:
         run: echo Bonjour toto, ceci est un test
 
   build:
+    needs: test
     runs-on: ubuntu-latest
 
     steps:
