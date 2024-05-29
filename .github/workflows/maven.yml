@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Le message
-        run: echo Bonjour toto, ceci est un test
+        run: echo une commande qui necessite un pot de passe que voila ${{secrets.LE_NOM_DU_SECRET}}
 
   build:
     needs: test
