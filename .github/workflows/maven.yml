@@ -31,7 +31,7 @@ jobs:
 
       - name: Scan SonarQube
         run: >
-          mvn clean verify sonar:sonar -Dsonar.projectKey=marieantoine  -Dsonar.projectName='marieantoine'  -Dsonar.host.url=${{secrets.SONAR_HOST_URL}} -Dsonar.token=${{secrets.SONAR_TOKEN}}
+          mvn clean verify sonar:sonar -Dsonar.projectKey=marieantoine  -Dsonar.projectName='marieantoine'  -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }} -Dsonar.token=${{ secrets.SONAR_TOKEN }}
 
   #build:
   # needs: test
