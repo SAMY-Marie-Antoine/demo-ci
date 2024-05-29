@@ -20,8 +20,7 @@ jobs:
     steps:
       - name: Le message
         run: >
-          echo une commande qui necessite un mot de passe
-          echo que voilà ${{secrets.LE_NOM_DU_SECRET}}
+          mvn clean verify sonar:sonar -Dsonar.projectKey=marieantoine  -Dsonar.projectName='marieantoine'  -Dsonar.host.url=${{secrets.SONAR_HOST_URL}} -Dsonar.token=${{secrets.SONAR_TOKEN}}
 
   build:
     name: Build and analyze
