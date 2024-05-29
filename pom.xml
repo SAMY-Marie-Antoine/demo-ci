@@ -11,9 +11,9 @@
 	</parent>
 
 	<groupId>fr.formation</groupId>
-	<artifactId>demo-test-unit</artifactId>
+	<artifactId>demo-marieantoine</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>demo-test-unit</name>
+	<name>demo-marieantoine</name>
 	<description>Demo project for Spring Boot</description>
 	
 	<properties>
@@ -34,6 +34,7 @@
 	</dependencies>
 
 	<build>
+		<finalName>ci-marieantoine</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
