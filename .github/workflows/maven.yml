@@ -24,16 +24,29 @@ jobs:
           echo que voilà ${{secrets.LE_NOM_DU_SECRET}}
 
   build:
-    needs: test
+    name: Build and analyze
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v4
-      - name: Set up JDK 17
-        uses: actions/setup-java@v3
         with:
-          java-version: "17"
-          distribution: "temurin"
-          cache: maven
-      - name: Build with Maven
-        run: mvn -B package --file pom.xml
+          fetch-depth: 0 # Shallow clones should be disabled for a better relevancy of analysis
+      - name: Set up JDK 17
+        uses: actions/setup-java@v1
+        with:
+          java-version: 17
+
+  #build:
+  # needs: test
+  #  runs-on: ubuntu-latest
+
+  #  steps:
+  #   - uses: actions/checkout@v4
+  #   - name: Set up JDK 17
+  #    uses: actions/setup-java@v3
+  #    with:
+  #     java-version: "17"
+  #     distribution: "temurin"
+  #    cache: maven
+  #  - name: Build with Maven
+  #   run: mvn -B package --file pom.xml
