@@ -95,10 +95,10 @@ jobs:
         run: >
           ssh ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}
           "
-          docker stop docker-hub-demo-ci || true
-          docker rm docker-hub-demo-ci || true
+          docker stop demo-ci-marieantoine || true
+          docker rm demo-ci-marieantoine || true
           docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN_SERVER }}
-          docker run -d -p 8080:8089 --name demo-ci-marieantoine --pull=always smarieantoine/demo-ci:java
+          docker run -d -p 8089:8080 --name demo-ci-marieantoine --pull=always smarieantoine/demo-ci:java
           exit
           "
 
