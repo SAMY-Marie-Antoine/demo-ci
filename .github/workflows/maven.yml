@@ -81,7 +81,6 @@ jobs:
           push: true
           tags: smarieantoine/demo-ci:java
   deploy:
-    needs: build
     runs-on: ubuntu-latest
 
     steps:
