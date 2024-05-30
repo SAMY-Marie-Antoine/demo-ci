@@ -92,7 +92,7 @@ jobs:
           ssh-keyscan -H ${{ secrets.SSH_HOST }} > ~/.ssh/known_hosts
 
       - name: Commandes pour info à executer sur la machine distante
-        run: |
+        run: >
           ssh ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}
           "
           docker stop docker-hub-demo-ci || true
